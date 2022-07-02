@@ -63,6 +63,9 @@ local function setup_plugins()
       event = "VimEnter",
     })
 
+    -- wakatime
+    use 'wakatime/vim-wakatime'
+
     for _, plugin in ipairs(require("plugins.load")) do
       use(plugin)
     end
