@@ -54,9 +54,11 @@ local markdown_plugins = {
       vim.fn["mkdp#util#install"]()
     end,
     setup = function()
-      vim.g.mkdp_browser = "surf"
+      -- vim.g.mkdp_browser = "surf"
+      vim.g.mkdp_browser = "chrome"
       vim.g.mkdp_open_to_the_world = 1
-      vim.g.mkdp_port = "57843"
+      vim.g.mkdp_port = "57844"
+      vim.g.mkdp_theme = "light"
     end,
     ft = {
       "markdown",
