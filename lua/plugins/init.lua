@@ -66,6 +66,9 @@ local function setup_plugins()
     -- wakatime
     use 'wakatime/vim-wakatime'
 
+    -- coc
+    use {'neoclide/coc.nvim', branch = 'release'}
+
     for _, plugin in ipairs(require("plugins.load")) do
       use(plugin)
     end
