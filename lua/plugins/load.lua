@@ -464,7 +464,7 @@ local editor_enhance = {
     end,
     keys = {
       { "n", "<C-e>" },
-      { "n", "<C-y>" },
+      -- { "n", "<C-y>" },
       { "n", "<C-f>" },
       { "n", "<C-b>" },
       { "n", "<C-j>" },
