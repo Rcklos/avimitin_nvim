@@ -108,7 +108,8 @@ local backup_stat
 if package.config:sub(1, 1) == '/' then
   backup_stat = pcall(os.execute, "mkdir -p " .. backup_dir)
 else
-  backup_stat = pcall(os.execute, "mkdir " .. string.gsub(backup_dir, '/', '\\'))
+  local path = string.gsub(backup_dir, '/', '\\')
+  backup_stat = pcall(os.execute, "mkdir " .. path .. " >nul 2>nul")
 end
 if backup_stat then
   opt.backupdir = backup_dir
@@ -122,7 +123,8 @@ local undo_stat
 if package.config:sub(1, 1) ==  '/' then
   undo_stat = pcall(os.execute, "mkdir -p " .. undo_dir)
 else
-  undo_stat = pcall(os.execute, "mkdir " .. string.gsub(undo_dir, '/', '\\'))
+  local path = string.gsub(undo_dir, '/', '\\')
+  undo_stat = pcall(os.execute, "mkdir " .. path .. " > nul 2>nul")
 end
 local has_persist = vim.fn.has("persistent_undo")
 if undo_stat and has_persist == 1 then
