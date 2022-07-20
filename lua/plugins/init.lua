@@ -69,6 +69,9 @@ local function setup_plugins()
     -- coc
     use {'neoclide/coc.nvim', branch = 'release'}
 
+    -- java
+    use 'mfussenegger/nvim-jdtls'
+
     for _, plugin in ipairs(require("plugins.load")) do
       use(plugin)
     end
