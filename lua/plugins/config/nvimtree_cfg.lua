@@ -52,6 +52,8 @@ require("nvim-tree").setup({
     },
   },
   renderer = {
+    -- 折叠空目录
+    group_empty = true,
     add_trailing = false,
     highlight_git = true,
     highlight_opened_files = "bold",
@@ -140,3 +142,4 @@ require("nvim-tree").setup({
     },
   },
 })
+
