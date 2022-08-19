@@ -26,7 +26,7 @@ nvim.config = {
 
   markdown = {
     -- must be executable
-    preview_browser = "firefox",
+    preview_browser = "chrome",
   },
 }
 
