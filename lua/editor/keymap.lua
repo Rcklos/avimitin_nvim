@@ -53,8 +53,8 @@ nmap("<ESC>", ":nohlsearch<CR>", d("Close search highlight"))
 map("i", "<A-;>", "<ESC>", d("Exit the insert mode"))
 
 -- move around the window
-nmap("<C-k>", "<C-w>k", d("Jump to window above"))
-nmap("<C-j>", "<C-w>j", d("Jump to window below"))
+nmap(";k", "<C-w>k", d("Jump to window above"))
+nmap(";j", "<C-w>j", d("Jump to window below"))
 nmap("<C-l>", "<C-w>l", d("Jump to the left window"))
 nmap("<C-h>", "<C-w>h", d("Jump to the righ window"))
 
