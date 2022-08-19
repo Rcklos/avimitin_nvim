@@ -29,6 +29,9 @@ plugins.load = function()
       event = "VimEnter",
     })
 
+    -- wakatime
+    use 'wakatime/vim-wakatime'
+
     for _, repo in ipairs(plugins.repos) do
       use(repo)
     end
