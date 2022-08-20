@@ -5,7 +5,8 @@ if not has_rooter then
 end
 
 local opts = {
-  rooter_patterns = { ".git", ".hg", ".svn", "Cargo.toml", "go.mod", "package.json" },
+  rooter_patterns = { ".git", ".hg", ".svn", "Cargo.toml", "go.mod", "package.json", 
+    ".root", ".project" },
   -- Trigger manually
   manual = false,
 }
