@@ -71,7 +71,7 @@ map({ "n", "x", "o" }, ",", "%", { noremap = false, silent = false })
 nmap("x", [["_x]])
 
 -- Delete word backward and do not yank
-nmap("dw", [[vb"_d]])
+nmap("dw", [["_dw]])
 
 -- Backspace to delete without yank
 map("n", "<BS>", [["_X]], { noremap = false })
