@@ -51,6 +51,7 @@ return function()
       },
     },
     renderer = {
+      group_empty = true,
       add_trailing = false,
       highlight_git = true,
       highlight_opened_files = "bold",
