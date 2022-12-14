@@ -1,8 +1,7 @@
 local opt = vim.opt
 
--- Enables 24-bit RGB color in the TUI, and set background to dark
+-- Enables 24-bit RGB color in the TUI
 opt.termguicolors = true
-opt.background = "dark"
 
 opt.encoding = "utf-8"
 -- When file encoding forcely set to UTF-8, some file with non-Unicode
@@ -74,7 +73,6 @@ opt.smartcase = true
 
 vim.cmd("set shortmess+=cwm")
 opt.inccommand = "split"
-opt.completeopt = { "menuone", "noselect", "menu" }
 opt.ttyfast = true
 opt.visualbell = true
 opt.updatetime = 100
@@ -96,6 +94,10 @@ opt.foldenable = true
 opt.formatoptions = "qj"
 
 opt.hidden = true
+
+-- command line line-height property, set it to 0 to gain
+-- more compat UI
+opt.ch = 0
 
 -- Changed home directory here
 local backup_dir = vim.fn.stdpath("cache") .. "/backup"

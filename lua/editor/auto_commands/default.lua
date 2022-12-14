@@ -55,3 +55,42 @@ au("TextYankPost", {
     copy(yank_data)
   end,
 })
+
+au({ "VimEnter" }, {
+  pattern = { "*" },
+  callback = function()
+    local rooter = require("libs.rooter")
+    local opts = {
+      rooter_patterns = { ".git", ".hg", ".svn", "Cargo.toml", "go.mod", "package.json" },
+      exclude_filetypes = { "gitcommit" },
+      -- Trigger manually
+      manual = false,
+    }
+
+    local old_cwd = vim.loop.cwd()
+
+    rooter.setup(opts)
+    -- trigger it only once
+    rooter.rooter()
+
+    local new_cwd = vim.loop.cwd()
+
+    if new_cwd ~= old_cwd then
+      vim.notify("Dir changed: " .. new_cwd)
+    end
+  end,
+})
+
+au("CmdlineEnter", {
+  pattern = "*",
+  callback = function()
+    vim.opt.ch = 1
+  end,
+})
+
+au("CmdlineLeave", {
+  pattern = "*",
+  callback = function()
+    vim.opt.ch = 0
+  end,
+})

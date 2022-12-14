@@ -1,8 +1,8 @@
-local utils = require("editor.utils")
-local map = utils.map
-local nmap = utils.nmap
-local xmap = utils.xmap
-local d = utils.new_desc
+local nmap = require("libs.keymaps").nmap
+local xmap = require("libs.keymaps").xmap
+local imap = require("libs.keymaps").imap
+local map = require("libs.keymaps").map
+local d = require("libs.keymaps").d
 
 vim.g.mapleader = ";"
 
@@ -14,12 +14,12 @@ nmap("K", "5k", d("Jump 5 lines up"))
 xmap("K", "5k", d("Jump 5 lines up"))
 
 -- Emacs key mapping in insert mode
-map("i", "<C-a>", "<Home>")
-map("i", "<C-e>", "<End>")
-map("i", "<C-b>", "<ESC>bi")
-map("i", "<C-f>", "<ESC>wa")
-map("i", "<C-n>", "<ESC>ja")
-map("i", "<C-p>", "<ESC>ka")
+imap("<C-a>", "<Home>")
+imap("<C-e>", "<End>")
+imap("<C-b>", "<ESC>bi")
+imap("<C-f>", "<ESC>wa")
+imap("<C-n>", "<ESC>ja")
+imap("<C-p>", "<ESC>ka")
 
 nmap("L", "g_", d("Jump to the end of the character"))
 nmap("H", "^", d("Jump to the beginning of the character"))
@@ -52,20 +52,8 @@ nmap("<ESC>", ":nohlsearch<CR>", d("Close search highlight"))
 -- no more finger expansion
 map("i", "<A-;>", "<ESC>", d("Exit the insert mode"))
 
--- move around the window
-nmap(";k", "<C-w>k", d("Jump to window above"))
-nmap(";j", "<C-w>j", d("Jump to window below"))
-nmap("<C-l>", "<C-w>l", d("Jump to the left window"))
-nmap("<C-h>", "<C-w>h", d("Jump to the righ window"))
-
--- resize the window
-nmap("<M-down>", ":res +5<CR>", d("Extend the upper boundary of the current window"))
-nmap("<M-up>", ":res -5<CR>", d("Extend the lower boundary of the current window"))
-nmap("<M-right>", ":vertical resize-5<CR>", d("Extend the right boundary of the current window"))
-nmap("<M-left>", ":vertical resize+5<CR>", d("Extend the right boundary of the current window"))
-
 -- kill buffer with ;q , quit window with :q.
-nmap(";q", require("plugins.libs.bufdel").delete_buffer)
+nmap(";q", require("libs.bufdel").delete_buffer)
 
 -- Write and quit. Alias for :wq<CR>
 nmap(";x", ":x<CR>")

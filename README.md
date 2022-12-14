@@ -1,15 +1,16 @@
 <h1 align="center">My Neovim Configuration</h1>
 <img src="./docs/images/screenshot.png" width="45%" align="right"/>
 
+![badge](https://github.com/avimitin/nvim/actions/workflows/test_macos.yml/badge.svg)
 ![badge](https://github.com/avimitin/nvim/actions/workflows/test.yml/badge.svg)
 ![badge](https://github.com/avimitin/nvim/actions/workflows/lint.yml/badge.svg)
 ![badge](https://img.shields.io/github/license/Avimitin/nvim)
 
 ## Features
 
-* ***Fast*** and ***Lazy***: It takes [28ms](./fixtures/benchmark.txt) in average to open the neovim editor.
+* ***Fast*** and ***Lazy***: It takes [28ms](./scripts/benchmark.txt) in average to open the neovim editor.
 And every plugin is handled well to be activate only when they are needed.
-Nothing should slowdown the editor.
+Nothing will slow down the editor.
 * ***Handy*** and ***Smoothy***: There will always be a panel to remind you
 when you forget your key settings. There will always be a short keystroke to help
 you get to the place you want to jump to. There will always…
@@ -31,13 +32,6 @@ the master branch, and they may be reverted.
 git clone --depth=1 https://github.com/Avimitin/nvim.git ~/.config/nvim
 # Then switch to the latest stable version
 git checkout latest
-
-# Or You can just download the latest stable version (Auto Retagged)
-curl "https://raw.githubusercontent.com/Avimitin/nvim/master/scripts/install.bash" -o install.bash
-# Please read the script before you use it
-cat install.bash
-# Execute it
-bash install.bash
 ```
 
 Finally, input `nvim` to open the editor, and all plugins will be downloaded automatically.
@@ -46,13 +40,11 @@ Finally, input `nvim` to open the editor, and all plugins will be downloaded aut
 nvim
 ```
 
-You can read the full installation instruction here:
-[**==> Installation Guide**](https://avimitin.github.io/nvim/en_us/installation.html)
+Edit the configuration in [`init.lua`](./init.lua) file.
 
 ## Document
 
-You can take a glance at [**NVIM GUIDANCE**](https://avimitin.github.io/nvim).
-And each sub-directory in `lua/` also contains a README.md to indicate how they work.
+See [Docs](./lua/README.md).
 
 ## Gallery
 
@@ -63,9 +55,9 @@ And each sub-directory in `lua/` also contains a README.md to indicate how they 
 | --------------------------------------------- |
 | ![LightSpeed](./docs/images/lightspeed.png)   |
 
-| Which key?                                    |
+| Window Manage                                 |
 |-----------------------------------------------|
-| ![which-key.gif](./docs/images/which-key.gif) |
+| ![window-manage](./docs/images/hydra-windows.png) |
 
 </details>
 
@@ -86,6 +78,12 @@ And each sub-directory in `lua/` also contains a README.md to indicate how they 
 
 <details>
     <summary markdown="span">Coding Utils</summary>
+
+| Friendly Key Mapping Hint |
+|---------------------------|
+| ![image](./docs/images/hydra-lspconfig.png) |
+| ![image](./docs/images/hydra-rust.png) |
+| ![image](./docs/images/hydra-js.png) |
 
 | Diagnostic Panel |
 |-----------------|
@@ -195,19 +193,14 @@ Take a look at their contribution, which is really fantastic.
 
 ## Development Related
 
-Please read [development specifications](./docs/src/en_us/development.md).
+### Versioning
+
+Version will be released in `cvYYYY.0M.0D` format.
+
+### Benchmark
+
+```bash
+perl ./fixtures/benchmark.pl
+```
 
 <br/>
-
----
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-<sup>有不少朋友问我翻斗花园是什么花园呢？其实就是大耳朵图图的家啦！</sup>
-<sup><s>
-我的 neovim 配置是翻斗花园第一配置，不服来打，我家住在翻斗大街翻斗花园2号楼1001室。
-我爸胡英俊，我妈张小丽，我叫胡图图，你来你看我干不干你就完事儿了。
-</s></sup>
