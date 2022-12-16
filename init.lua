@@ -59,6 +59,9 @@ require("editor").setup({
       -- Enable treesitter for lua, and use `sumneko_lua` as LSP server
       { "lua", "sumneko_lua" },
 
+      { { "c", "cpp" }, "clangd" },
+      { "erlang", "erlangls" },
+
       -- use tsserver for .js, .ts, .tsx, .jsx with treesitter enable
       -- Install it via your system package manager or `npm install -g tsserver`
       { { "javascript", "typescript", "javascriptreact", "typescriptreact" }, "tsserver" },

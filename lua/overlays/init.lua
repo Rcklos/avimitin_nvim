@@ -51,6 +51,11 @@ local function load_plugins()
       event = "VimEnter",
     })
 
+    -- wakatime
+    use({
+      "wakatime/vim-wakatime"
+    })
+
     for _, repo in ipairs(all_repos) do
       use(repo)
     end

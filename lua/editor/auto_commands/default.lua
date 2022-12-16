@@ -61,7 +61,7 @@ au({ "VimEnter" }, {
   callback = function()
     local rooter = require("libs.rooter")
     local opts = {
-      rooter_patterns = { ".git", ".hg", ".svn", "Cargo.toml", "go.mod", "package.json" },
+      rooter_patterns = { ".git", ".hg", ".svn", "Cargo.toml", "go.mod", "package.json", ".root" },
       exclude_filetypes = { "gitcommit" },
       -- Trigger manually
       manual = false,
