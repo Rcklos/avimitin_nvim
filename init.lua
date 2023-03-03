@@ -57,7 +57,7 @@ require("editor").setup({
       -- Or uncomment them to enable.
 
       -- Enable treesitter for lua, and use `sumneko_lua` as LSP server
-      { "lua", "sumneko_lua" },
+      { "lua", "lua_ls" },
 
       { { "c", "cpp" }, "clangd" },
       { "erlang", "erlangls" },

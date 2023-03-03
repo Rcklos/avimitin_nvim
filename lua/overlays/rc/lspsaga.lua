@@ -3,7 +3,8 @@ local themes = require("lspsaga.lspkind")
 themes[12][2] = " "
 
 -- use custom config
-saga.init_lsp_saga({
+-- saga.init_lsp_saga({
+saga.setup({
   -- when cursor in saga window you config these to move
   move_in_saga = { prev = "k", next = "j" },
   diagnostic_header = { " ", " ", " ", " " },
