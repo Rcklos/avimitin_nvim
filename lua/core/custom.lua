@@ -146,6 +146,7 @@ local default = {
       "tsx",
       "typescript",
       "vim",
+      "erlang",
     },
   },
   neovide = {
@@ -196,6 +197,10 @@ local default = {
     prettier = true,
     eslint = true,
   },
+  erlang = {
+    enable = true,
+    server = "erlang_ls",
+  }
 }
 
 --- Path to custom file in neovim root dir, return nil if it is not exist
