@@ -13,6 +13,7 @@ local function collect_plugins()
     "tools",
     "treesitter",
     "ui",
+    'custom',
   }
 
   for _, component in ipairs(overlays) do
