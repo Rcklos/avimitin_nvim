@@ -1,7 +1,11 @@
 return {
   setup = function(opts)
 
+    local apply_keymaps = require("lsp.keymaps")
     local on_attach = function(client, bufnr)
+      -- 不加这个会导致gd快捷键失效
+      apply_keymaps(client, bufnr)
+
       local getline = function()
         vim.fn.getline(".")
       end
