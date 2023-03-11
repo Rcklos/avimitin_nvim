@@ -223,6 +223,7 @@ local function get_project_custom()
     "yarn.lock",
     ".hg",
     ".svn",
+    ".root",
   }
 
   local finder = require("libs.find_root")
