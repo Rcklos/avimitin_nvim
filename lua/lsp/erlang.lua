@@ -29,10 +29,16 @@ return {
           desc = "test"
       })
       cmd("ErlTopic", function()
-        local cur = vim.fn.winline()
+        local cur = vim.fn.line(".")
         append(cur - 1, '%% -------------------------------------------------------------------')
         append(cur - 1, '%% ')
         append(cur - 1, '%% -------------------------------------------------------------------')
+      end, {
+          desc = "test"
+      })
+      cmd("ErlDivide", function()
+        local cur = vim.fn.line(".")
+        append(cur - 1, '%% ===================================================================')
       end, {
           desc = "test"
       })
