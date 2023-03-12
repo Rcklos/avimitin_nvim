@@ -46,6 +46,12 @@ return {
       end, {
           desc = "test"
       })
+      cmd("ErlDoc", function()
+        local cur = vim.fn.line(".")
+        append(cur - 1, '%% @doc ')
+      end, {
+          desc = "test"
+      })
     end
 
     opts.on_attach = on_attach
